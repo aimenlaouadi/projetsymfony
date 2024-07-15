@@ -1,3 +1,31 @@
 body {
     background-color: skyblue;
 }
+
+.colorsame{
+background-color: #83af92aa;
+}
+
+.img{
+    
+    background-size: cover;
+}
+
+.h-screen{
+    height: 90vh;
+}
+
+.imageprofil{
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+}
+
+
+/*
+couleur texte: hexadecimale : #1a3423
+couleur background: hexa : #f3f8f3
+""      Primaire: #83af92,
+""      Secondaire: #a7d4d3,
+""      Accent : 7d89b8,
+*/

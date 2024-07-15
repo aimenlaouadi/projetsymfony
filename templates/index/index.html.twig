@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello IndexController!{% endblock %}
+
+{% block nav%}{{parent()}}{% endblock %}
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+
+
+            {% include "components/_search_data_html.twig" with {
+                form: form
+            } only %}
+
+            <!--section1 image -->
+            <section class="section1  nav" > <!-- ICI on met si on veut un backgroud à la section en ajoutant sa class -->
+                    <div class="container-fluid"> <!-- container si on touche pas container-fluid si on touche -->
+                        <div class="row">
+                                
+                                
+                                    
+                                    <div class="col-lg-12 d-lg-block d-none gap-3">
+                                        <div class=" mb-4 mt-2 d-flex justify-content-center">
+                                            <img src="{{asset('/uploads/enfants.jpeg') }}" class="img" alt="image de profil" />
+                                    
+                                        </div>
+                                    </div>
+
+                                <div class="col-lg-6 d-lg-block d-none gap-3">
+                                    <div class=" border mb-4 ">
+                                        <h1>Sourires partagés!</h1>
+                                   
+                                        <p>Bienvenue sur le site de notre association dédiée aux personnes seules et à leur engagement précieux envers les patients hospitalisés ! Nous sommes une communauté dynamique et bienveillante qui vise à créer des liens humains significatifs et à apporter du réconfort aux personnes qui traversent des moments difficiles à l'hôpital.<br>
+
+                                        Notre association a été créée avec la conviction que personne ne devrait se sentir seul lorsqu'il est confronté à la maladie ou à une hospitalisation. Nous croyons en la force de la compassion et de l'entraide, et nous nous engageons à offrir un soutien chaleureux et une présence réconfortante à ceux qui en ont le plus besoin.<br>
+
+                                        En rejoignant notre association, vous aurez la possibilité de faire une différence significative dans la vie des patients. Que vous soyez un étudiant, un professionnel, un retraité ou tout simplement une personne disposant de temps libre, vous pouvez contribuer à égayer la journée de quelqu'un en lui offrant une visite amicale et en lui apportant un peu de votre temps et de votre attention.<br>
+
+                                        </p>
+                                    
+                                    </div>
+                                </div>
+
+                             
+                        </div>
+
+                    </div>
+            </section>
+   
+
+            <!--section1 profil -->
+                <section class="section1  nav" > 
+                    <div class="container-fluid"> 
+                        <div class="row">
+                                {% for profil in profiles %}
+                                    
+                                        <div class=" border mb-4 ">
+                                            <div class="col-lg-12 d-lg-block d-none gap-3">
+                                                <div class=" border mb-4 ">   
+                                                    <h3>{{profil.name}}</h3>
+                                                    <p>{{profil.lastname}}</p>
+                                                    <p>{{profil.description}}</p>
+                                                    <a href="/profil/{{profil.id}}" class="btn btn-secondary btn-rounded">Accèder</a>
+                                                </div>    
+                                            </div>
+                                          
+                                    
+                                {% endfor %}
+                    
+                        </div>
+
+                    </div>
+                </section>
+
+
+
+               
+
+
+
+
+{% endblock %}
+
+{% block footer %}{{parent()}}{% endblock %}

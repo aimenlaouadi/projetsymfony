@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello IndexController!{% endblock %}
+
+{% block nav%}{{parent()}}{% endblock %}
+{% block body %}
+
+
+            <!--section1 image profil -->
+            <section class="section1  nav" > <!-- ICI on met si on veut un backgroud à la section en ajoutant sa class -->
+                    <div class="container-fluid"> <!-- container si on touche pas container-fluid si on touche -->
+                        <div class="row  h-screen justify-content-center align-items-center">
+                                <h1>Profil</h1>
+                                
+                                <div class="col-lg-6 d-lg-block d-none gap-3">
+                                    <div class=" border mb-4 ">
+                                    <img src="{{ asset('uploads/profile/' ~ profile.profilePicFilename ) }}"  alt="depart" />
+                                    <h3>{{profile.name}}</h3>
+                                    <h3>{{profile.lastname}}</h3>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 d-lg-block d-none gap-3">
+                                    <div class=" border mb-4 ">
+                                    
+                                    
+                                    <p>{{profile.description}}</p>
+                                    
+                                    </div>
+                                </div>
+
+                                <h3>Contactez-moi</h3>
+                                {{form_start(form)}}
+
+                                {{form_row(form.name)}}
+                                {{form_row(form.email)}}
+                                {{form_row(form.message)}}
+
+
+                                {{form_end(form)}}
+                             
+                        </div>
+
+                    </div>
+                </section>
+
+
+
+  
+
+
+{% endblock %}
+
+{% block footer %}{{parent()}}{% endblock %}
